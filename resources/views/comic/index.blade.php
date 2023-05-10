@@ -2,6 +2,7 @@
 
 @section('page.main')
     <div class="container">
+        <a class="btn btn-primary" href={{route('comics.create')}} role="button">Aggiungi un fumetto</a>
         <table class="table">
             <thead>
                 <tr>
