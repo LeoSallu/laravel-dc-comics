@@ -2,7 +2,7 @@
 
 @section('page.main')
     <div class="container">
-        <a href="{{ route('comics.index') }}" class="btn btn-primary my-5">Torna all'elenco</a>
+        <a href="{{ route('comics.index') }}" class="btn btn-danger my-5">Torna all'elenco</a>
 
         <form action="{{route('comics.store')}}" method="POST">
             @csrf
@@ -30,7 +30,7 @@
                 <label for="sale_date" class="form-label">Data di uscita del fumetto</label>
                 <input type="text" class="form-control" id="sale_date" name="sale_date" placeholder="Inserisci la data di uscita del fumetto">
             </div>
-            <button type="submit" class="btn btn-primary">Crea</button>
+            <button type="submit" class="btn btn-success">Crea</button>
         </form>
 
     </div>

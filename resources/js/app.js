@@ -8,3 +8,8 @@ import * as bootstrap from 'bootstrap'
 import.meta.glob([
     '../img/**'
 ])
+
+const eventBtn = document.querySelector('#alert');
+    eventBtn.addEventListener('click', function() {
+        alert('Sei sicuro di voler cancellare questo dato ?');
+    });

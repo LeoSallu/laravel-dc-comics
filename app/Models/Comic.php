@@ -10,5 +10,5 @@ class Comic extends Model
     use HasFactory;
 
 
-    protected $guarded = [];
+    protected $guarded = ['description','src','sale_date'];
 }
