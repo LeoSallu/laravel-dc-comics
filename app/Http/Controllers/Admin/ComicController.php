@@ -4,8 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Carbon;
+use App\Http\Requests\ComicRequest;
 use App\Models\Comic;
-use Illuminate\Http\Request;
 
 class ComicController extends Controller
 {
@@ -36,8 +36,9 @@ class ComicController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ComicRequest $request)
     {
+        $request->validated();
         $data = $request->all();
         $newComic = new Comic();
 
@@ -61,7 +62,7 @@ class ComicController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  Comic $comic
      * @return \Illuminate\Http\Response
      */
     public function edit(Comic $comic)
@@ -76,8 +77,9 @@ class ComicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Comic $comic)
+    public function update(ComicRequest $request, Comic $comic)
     {
+        $request->validated();
         $data = $request->all();
         $comic->update($data);    
 

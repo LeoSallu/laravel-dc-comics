@@ -4,7 +4,17 @@
     <div class="container">
         <h1 class="text-warning my-3">Modifica i dettagli del fumetto</h1>
         <a href="{{ route('comics.index') }}" class="btn btn-warning my-5">Torna all'elenco</a>
-
+        <div>
+            @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+            @endif
+        </div>
         <form action="{{ route('comics.update', $comic->id) }}" method="POST">
             @csrf
             @method('PUT')
